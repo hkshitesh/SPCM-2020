@@ -1,0 +1,19 @@
+version: '3.3'
+
+services:
+   database:
+     image: mysql:5.7
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: root
+       MYSQL_DATABASE: MIDSEM
+       MYSQL_USER: DevOps
+       MYSQL_PASSWORD: DevOps
+
+   webapp:
+     depends_on:
+       - database
+     image:  kush:v1
+     ports:
+       - "1337:80"
+     restart: always
