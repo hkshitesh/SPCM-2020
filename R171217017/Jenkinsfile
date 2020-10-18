@@ -1,15 +1,20 @@
 pipeline {
   environment {
-    registry = "Garishmavirk/spcm"
-    registryCredential = 'dockerhub'
+    registry = "garishmavirk/spcm"
+    registryCredential = 'garishmavirk'
     dockerImage = ''
   }
   agent any
   stages {
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/Sarthak2116/demo.git'
+        git 'https://github.com/garishmavirk/web-app.git'
       }
+    }
+    stage('Build') {
+       steps {
+         sh 'docker build -t simple-web-application .'
+       }
     }
     stage('Building image') {
       steps{
@@ -20,16 +25,11 @@ pipeline {
     }
     stage('Deploy Image') {
       steps{
-        script {
-          docker.withRegistry( '', registryCredential ) {
+         script {
+            docker.withRegistry( '', registryCredential ) {
             dockerImage.push()
           }
         }
-      }
-    }
-    stage('Remove Unused docker image') {
-      steps{
-        sh "docker rmi $registry:$BUILD_NUMBER"
       }
     }
   }
