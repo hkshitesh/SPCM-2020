@@ -8,7 +8,8 @@
 * [Technologies](#technologies)
 * [Authors](#authors)
 * [References](#references)
-
+##Maintainer 
+KESHAV MISHRA
 ## Files and architecture
 
 * Frontend - jQuery
@@ -86,11 +87,6 @@ http://localhost:3000/
 * [jQuery](https://jquery.com/) - JavaScript library
 * [JavaScript](https://www.javascript.com/) - Programming language
 * [MongoDB](https://www.mongodb.com/) - NoSQL database
-
-## Authors
-
-* **Saurav Garg** - *Initial work* - [sauravgarg001](https://github.com/sauravgarg001)
-
 
 ## References
 
