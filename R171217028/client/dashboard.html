@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Incubchat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- links bootstrap.css-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body style="overflow-y:hidden">
+    <!-- .container start"s -->
+    <div class="container">
+        <div class="page-wrapper chiller-theme">
+            <!-- create group sidebar -->
+            <nav id="sidebar" class="sidebar-wrapper">
+                <div class="sidebar-content">
+                    <div id="close-sidebar" class="float-right mr-2" style="font-size: 1.5rem;">
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <div class="sidebar-search">
+                        <input type="text" class="form-control search-menu" placeholder="New group name" id="group-name">
+
+                    </div>
+                    <!-- sidebar-header  -->
+                    <div class="sidebar-search">
+                        <div>
+                            <div class="input-group">
+                                <input type="text" class="form-control search-menu" placeholder="Search users" id="user-search">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                          <i class="fa fa-search" aria-hidden="true"></i>
+                        </span>
+                                </div>
+                                <button type="button" class="btn m-0 p-0 ml-1 text-info rounded-circle" style="font-size: 1.5rem;" title="Create Group" id="create-group"><i class="fas fa-check-circle"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="users-list" style="overflow-x: hidden;">
+                        <div class="card user" id="user" hidden>
+                            <div class="row">
+                                <!-- Sender Template starts -->
+                                <p class="user-id" hidden></p>
+                                <div class="col-md-1 col-3 user-img">
+                                    <div class="img h2 text-dark">&nbsp;</div>
+                                    <!-- <img src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" class="card-img"> -->
+                                </div>
+                                <div class="col-9 user-text">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <span class="user-name text-white">Name</span>
+                                            <small class="float-right user-blocked text-danger" style="display: none;"><i class="fas fa-ban"></i></small>
+                                            <small class="float-right user-selected text-info" style="display: none;"><i class="fas fa-check"></i></i></small>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <!-- Sender Template ends -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+            <!-- Add members sidebar -->
+            <nav id="add-members-sidebar" class="sidebar-add-members-wrapper">
+                <div class="sidebar-content">
+                    <div id="close-add-members-sidebar" class="float-right mr-2" style="font-size: 1.5rem;">
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <!-- sidebar-header  -->
+                    <div class="sidebar-search">
+                        <div>
+                            <div class="input-group">
+                                <input type="text" class="form-control search-menu" placeholder="Search users" id="add-member-search">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                          <i class="fa fa-search" aria-hidden="true"></i>
+                        </span>
+                                </div>
+                                <button type="button" class="btn m-0 p-0 ml-1 text-info rounded-circle" style="font-size: 1.5rem;" title="Add new members" id="add-members"><i class="fas fa-check-circle"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="add-member-users-list" style="overflow-x: hidden;">
+                        <div class="card add-member-user" id="add-member-user">
+                            <div class="row">
+                                <!-- Sender Template starts -->
+                                <p class="user-id" hidden></p>
+                                <div class="col-md-1 col-3 user-img">
+                                    <div class="img h2 text-dark"><i class="fas fa-times"></i></div>
+                                    <!-- <img src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" class="card-img"> -->
+                                </div>
+                                <div class="col-9 user-text">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <span class="user-name text-white">None</span>
+                                            <small class="float-right user-blocked text-danger" style="display: none;"><i class="fas fa-ban"></i></small>
+                                            <small class="float-right user-selected text-info" style="display: none;"><i class="fas fa-check"></i></i></small>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <!-- Sender Template ends -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+            <!-- Group Info SideBar -->
+            <nav id="members-sidebar" class="sidebar-members-wrapper">
+                <div class="sidebar-content">
+                    <div id="close-members-sidebar" class="float-right mr-2" style="font-size: 1.5rem;">
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <input type="text" id="user-group-id" hidden>
+                    <button type="button" class="btn text-white btn-info btn-lg btn-block" title="Add member" id="add-member"><i class="fas fa-user-plus"></i></button>
+                    <!-- sidebar-header  -->
+                    <div class="h4 text-white font-weight-bold">Group Members:</div>
+                    <div id="members-users-list" style="overflow-x: hidden;">
+                        <div class="card members-user" id="members-user" hidden>
+                            <div class="row">
+                                <!-- Group Members Template starts -->
+                                <p class="user-id" hidden></p>
+                                <div class="col-md-1 col-3 user-img">
+                                    <div class="img h2 text-dark">&nbsp;</div>
+                                    <!-- <img src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" class="card-img"> -->
+                                </div>
+                                <div class="col-9 user-text">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <span class="user-name text-white">Name</span>
+                                            <!-- .group-dropdown-menu starts -->
+                                            <span class="float-right group-dropdown-menu-link" hidden role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                &nbsp;<i class="fas fa-chevron-circle-down"></i>
+                                            </span>
+                                            <div class="dropdown-menu group-dropdown-menu">
+                                                <a class="dropdown-item group-dropdown-make-admin" href="#">Make admin</a>
+                                                <a class="dropdown-item group-dropdown-remove-admin" href="#">Remove as admin</a>
+                                                <a class="dropdown-item group-dropdown-remove" href="#">Remove member</a>
+                                            </div>
+                                            <!-- .group-dropdown-menu ends -->
+                                            <small class="float-right user-admin btn btn-outline-success" style="display: none;" style="pointer-events: none;">Group Admin</small>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <!-- Group User Template ends -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Chat SideBar -->
+            <nav id="chat-sidebar" class="sidebar-chat-wrapper">
+                <div class="sidebar-content">
+                    <input type="text" id="user-chat-id" hidden>
+                    <div id="close-chat-sidebar" class="float-right mr-2" style="font-size: 1.5rem;">
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <!-- sidebar-header  -->
+                    <div class="h4 text-white font-weight-bold">Seen By:</div>
+                    <div id="seen-users-list" style="overflow-x: hidden;">
+                        <div class="card seen-user" id="seen-user">
+                            <div class="row">
+                                <!-- Group User Template starts -->
+                                <p class="user-id" hidden></p>
+                                <div class="col-md-1 col-3 user-img">
+                                    <div class="img h2 text-dark"><i class="fas fa-times"></i></div>
+                                    <!-- <img src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" class="card-img"> -->
+                                </div>
+                                <div class="col-9 user-text">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <span class="user-name text-white">None</span>
+                                            <small class="float-right text-secondary user-time">&nbsp;</small>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <!-- Group User Template ends -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h4 text-white font-weight-bold">Delivered To:</div>
+                    <div id="delivered-users-list" style="overflow-x: hidden;">
+                        <div class="card delivered-user" id="delivered-user">
+                            <div class="row">
+                                <!-- Group User Template starts -->
+                                <p class="user-id" hidden></p>
+                                <div class="col-md-1 col-3 user-img">
+                                    <div class="img h2 text-dark"><i class="fas fa-times"></i></div>
+                                    <!-- <img src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" class="card-img"> -->
+                                </div>
+                                <div class="col-9 user-text">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <span class="user-name text-white">None</span>
+                                            <small class="float-right text-secondary user-time">&nbsp;</small>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <!-- Group User Template ends -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+            <!-- .row starts -->
+            <div class="row mt-3">
+                <div class="col-lg-4 col-4 border border-info offset-lg-1 border-right-0 p-0 rounded" style="height: 95vh;overflow-y: auto;overflow-x: hidden;">
+                    <div style="position: sticky;top:0;z-index: 5;" class="row">
+                        <div class="col-12">
+                            <input type="button" class="btn btn-info w-100" id="logout" name="logout" value="Log  out">
+                        </div>
+                        <div class="col-md-10 pr-md-0 my-md-1">
+                            <input type="text" class="form-control" style="font-family: FontAwesome;" id="sender-search" placeholder="Search">
+                        </div>
+                        <div class="col-md-2 pl-md-0 my-md-1">
+                            <button id="show-sidebar" class="btn-info btn w-100">
+                                <i class="fas fa-users"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="sender-list">
+                        <!-- Sender Template starts -->
+                        <div class="card sender" id="sender" hidden>
+                            <div class="row">
+                                <p class="sender-id" hidden></p>
+                                <div class="col-lg-3 col-7 col-sm-5 col-md-4 sender-img">
+                                    <div class="img h2 text-white">&nbsp;</div>
+                                    <!-- <img src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" class="card-img"> -->
+                                </div>
+                                <div class="col-lg-9 col-12 sender-text">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <span class="sender-name">Name</span>
+                                            <!-- .sender-dropdown-menu starts -->
+                                            <span class="float-right sender-dropdown-menu-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            &nbsp;<i class="fas fa-chevron-circle-down"></i>
+                                        </span>
+                                            <div class="dropdown-menu sender-dropdown-menu">
+                                                <a class="dropdown-item sender-dropdown-block" href="#">Block user</a>
+                                                <a class="dropdown-item sender-dropdown-unblock" href="#" style="display: none;">Unbock user</a>
+                                                <a class="dropdown-item sender-dropdown-spam" href="#">Report spam</a>
+                                            </div>
+                                            <!-- .sender-dropdown-menu ends -->
+                                            <small class="float-right sender-unread-messages-count text-success" style="display: none;">0</small>
+                                            <small class="float-right sender-blocked text-danger" style="display: none;"><i class="fas fa-ban"></i></small>
+                                        </h5>
+                                        <div class="card-text">
+                                            <span class="sender-message">&nbsp;</span>
+                                            <span class="sender-message-typing text-success" style="display: none;">typing...</span>
+                                        </div>
+                                        <p class="card-text w-100">
+                                            <small class="float-left text-success">
+                                                <!-- Online -->
+                                                <span class="sender-message-status" style="display: none;">
+                                                    <i class="fas fa-circle"></i>
+                                                </span>
+                                                <!-- Last Seen -->
+                                                <span class="sender-last-seen">
+                                                    <i class="far fa-eye"></i>
+                                                    <span class="sender-last-seen-text">&nbsp;</span>
+                                                </span>
+                                            </small>
+                                            <small class="float-right text-muted">
+                                                <span class="sender-message-date">&nbsp;</span>&nbsp;
+                                                <span class="sender-message-time">&nbsp;</span>
+                                            </small>
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- Sender Template ends -->
+                        <!-- Group Template starts -->
+                        <div class="card group" id="group" hidden>
+                            <div class="row">
+                                <p class="group-id" hidden></p>
+                                <div class="col-lg-3 col-7 col-sm-5 col-md-4 group-img">
+                                    <div class="img h2 text-white">&nbsp;</div>
+                                    <!-- <img src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" class="card-img"> -->
+                                </div>
+                                <div class="col-lg-9 col-12 group-text">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <span class="group-name">Name</span>
+                                            <!-- .group-dropdown-menu starts -->
+                                            <span class="float-right group-dropdown-menu-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            &nbsp;<i class="fas fa-chevron-circle-down"></i>
+                                        </span>
+                                            <div class="dropdown-menu group-dropdown-menu">
+                                                <a class="dropdown-item group-dropdown-info" href="#">Group info</a>
+                                                <a class="dropdown-item group-dropdown-exit" href="#">Exit group</a>
+                                                <a class="dropdown-item group-dropdown-spam" href="#">Report spam</a>
+                                            </div>
+                                            <!-- .group-dropdown-menu ends -->
+                                            <small class="float-right group-unread-messages-count text-success" style="display: none;">0</small>
+                                            <small class="float-right group-blocked text-danger" style="display: none;">
+                                                <i class="fas fa-ban"></i>
+                                            </small>
+                                        </h5>
+                                        <div class="card-text">
+                                            <span class="group-message">&nbsp;</span>
+                                            <span class="text-success group-message-typing" style="display: none;">
+                                                &nbsp;
+                                            </span>
+                                        </div>
+                                        <p class="card-text w-100">
+                                            <small class="text-muted float-right">
+                                                <span class="group-message-date">&nbsp;</span>&nbsp;
+                                                <span class="group-message-time">&nbsp;</span>
+                                            </small>
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- Group Template ends -->
+                    </div>
+                </div>
+                <div class="col-lg-6 col-8 border border-info mx-0 rounded" style="height: 95vh;">
+                    <!-- .form-row starts -->
+                    <div class="form-row">
+
+                        <div id="chatBox" class="col-md-12 py-2 mb-3 mb-md-5 border-bottom" style="height:82vh;overflow-y: auto;overflow-x: hidden;">
+                            <!-- Welcome Screen starts -->
+                            <div id="welcome" style="position: absolute;top: 30%;text-align: center; width: 100%;">
+                                <img src="img/logo2.png" class="img-fluid">
+                                <h2 style="color: var(--cyan);"> Welcome <span id="name">Test Name</span> to Incubchat</h2>
+                            </div>
+                            <!-- Welcome Screen ends -->
+                            <!-- No Messages -->
+                            <center id="no-message" style="display: none;">
+                                <h5>No messages</h5>
+                            </center>
+                            <div class="form-row mt-3">
+                                <!-- Unread Messages -->
+                                <center class="col-12 bg-dark text-white" id="unread-messages" style="display: none;">
+                                    <span id="unread-messages-count">0</span> Unread Messages
+                                </center>
+                                <!-- Date Template -->
+                                <center class="date col-12" id="date" hidden>
+                                    Date
+                                </center>
+                                <!-- Message Sent Template starts -->
+                                <div class="col-md-12 message-sent-block mb-2" id="message-sent-block" hidden>
+
+                                    <input type="text" class="message-sent-id" hidden/>
+                                    <div class="message-sent">Test Sent</div>
+                                    <a class="float-right text-info message-info" title="Message info"><i class="fas fa-info-circle">&nbsp;</i></a>
+                                    <div class="position-absolute text-muted message-time-block" style="bottom: -0.65rem; right: 1.25rem;font-size: 0.65rem;">
+                                        <span class="time">&nbsp;</span>
+                                        <!-- for group chat -->
+                                        <span class="delivered-count">
+                                            <i class="fas fa-truck"></i><span class="delivered-count-text">0</span>
+                                        </span>
+                                        <span class="seen-count">
+                                            <i class="fas fa-eye"></i><span class="seen-count-text">0</span>
+                                        </span>
+                                        <!---->
+                                    </div>
+                                    <!-- for single chat -->
+                                    <div class="text-muted status-sent position-absolute" style="bottom: -0.65rem; right:0.35rem;font-size: 0.65rem;display: none;"><i class="fas fa-check"></i></div>
+                                    <div class="text-muted status-delivered position-absolute" style="bottom: -0.65rem; right:0.35rem;font-size: 0.65rem;display: none;"><i class="fas fa-check-double"></i></div>
+                                    <div class="status-seen position-absolute" style="color:var(--cyan);bottom: -0.65rem; right:0.35rem;font-size: 0.65rem;display: none;"><i class="fas fa-check-double"></i></div>
+                                    <!---->
+                                    <!-- Tail -->
+                                    <svg class="bi bi-play-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="var(--cyan)" xmlns="http://www.w3.org/2000/svg" style="position: absolute;top: 0.12rem; right: -.2rem;">
+                                    <path d=" M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 010 1.393z"></path>
+                                </svg>
+                                </div>
+                                <!-- Message Sent Template ends -->
+                                <!-- Message Recieved Template starts -->
+                                <div class="col-md-12 message-recieved-block mb-2" id="message-recieved-block" hidden>
+                                    <!-- for group chat -->
+                                    <div class="message-name position-absolute font-weight-bold" style="top: -0.65rem; left: 0;font-size: 0.65rem;padding-left: 5px;">Test Name</div>
+                                    <input type="text" class="message-sender-id" hidden/>
+                                    <!---->
+                                    <div class="message-recieved">Test Recieved</div>
+                                    <input type="text" class="message-recieved-id" hidden/>
+                                    <div class="text-muted time position-absolute" style="bottom: -0.65rem; left: 0;font-size: 0.65rem;padding-left: 5px;">&nbsp;</div>
+                                    <!-- Tail -->
+                                    <svg class="bi bi-play-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="var(--dark)" xmlns="http://www.w3.org/2000/svg" style="position: absolute;top: 0.12rem; left: -.2rem;transform: rotate(180deg);">
+                                    <path d=" M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 010 1.393z"></path>
+                                </svg>
+                                </div>
+                                <!-- Message Recieved Template ends -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- .form-row ends -->
+                    <!-- .form-row starts -->
+                    <div class="form-row" id="send-message" hidden>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control rounded-pill" id="message" name="message" placeholder="Type a message" required>
+                        </div>
+                        <div class="col-md-2">
+                            <input type="button" class="form-control btn-outline-info rounded-pill btn-block btn" id="send" name="send" value="Send">
+                        </div>
+                    </div>
+                    <!-- .form-row ends -->
+                    <!-- .form-row starts -->
+                    <div class="form-row" id="block-message" hidden>
+                        <div class="col-md-10">
+                            <center class="h5 text-danger">Can't send meesage, User is Blocked</center>
+                        </div>
+                    </div>
+                    <!-- .form-row ends -->
+                </div>
+            </div>
+            <!-- .row ends -->
+        </div>
+    </div>
+    <!-- .container ends -->
+
+    <!-- .toast starts -->
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000" style="position: absolute; top: 100px; right: 100px;z-index: 1020;">
+        <div class="toast-header">
+            <small class="text-muted">just now</small>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="toast-body" id="txtToast">
+        </div>
+    </div>
+    <!-- .toast ends -->
+
+    <!-- <script type="text/javascript" src="js/hybrid-crypto.min.js"></script> -->
+
+    <!-- links jquery-3.4.1.min.js -->
+    <script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <!-- links popper.min.js -->
+    <script src="js/popper.min.js" type="text/javascript"></script>
+    <!-- links bootstrap.js -->
+    <script src="js/bootstrap.js" type="text/javascript"></script>
+    <!-- font awesome 5 CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+    <!-- links cookie.js -->
+    <script src="js/cookie.js" type="text/javascript"></script>
+    <!-- links socket.io client library-->
+    <script src="js/socket.io.js"></script>
+    <!-- links dashboard.js -->
+    <script src="js/dashboard.js"></script>
+    <!-- links single-chat.js -->
+    <script src="js/single-chat.js"></script>
+    <!-- links group-chat.js -->
+    <script src="js/group-chat.js"></script>
+
+</body>
+
+</html>

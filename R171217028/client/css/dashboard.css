@@ -1,0 +1,304 @@
+:root {
+    --cyan: #20BEBE !important;
+    --dark: #343a40 !important;
+    --secondary: #6c757d !important;
+}
+
+.text-info {
+    color: var(--cyan);
+}
+
+.card {
+    background-color: transparent;
+}
+
+.btn-info:hover {
+    background-color: var( --cyan);
+    border-color: var( --cyan);
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.btn-info,
+.btn-outline-info:hover {
+    background-color: var( --cyan);
+    border-color: var( --cyan);
+}
+
+.btn-outline-info {
+    border-color: var( --cyan);
+    color: var(--cyan);
+}
+
+.time,
+.sender,
+.group,
+.date,
+.message-name,
+.user-time {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+#members-user,
+#add-member-user,
+#user {
+    pointer-events: none;
+}
+
+.card-text {
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sender,
+.group {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border: 0px 0px 1px 0px;
+    width: 100%;
+}
+
+.sender:hover,
+.group:hover {
+    background-color: #F5F5F5 !important;
+    cursor: pointer;
+}
+
+.user:hover {
+    background-color: var(--secondary) !important;
+    cursor: pointer;
+}
+
+.members-user:hover {
+    background-color: #444955 !important;
+}
+
+.sender.active,
+.group.active {
+    background-color: #EBEBEB !important;
+}
+
+.sender .sender-img .img.h2,
+.group .group-img .img.h2 {
+    background-color: var( --secondary);
+}
+
+.user .user-img .img.h2,
+.seen-user .user-img .img.h2,
+.delivered-user .user-img .img.h2,
+.members-user .user-img .img.h2,
+.add-member-user .user-img .img.h2 {
+    background-color: white !important;
+}
+
+.sender.active .sender-img .img.h2,
+.group.active .group-img .img.h2 {
+    background-color: var( --dark);
+}
+
+.sender .sender-img,
+.group .group-img,
+.user .user-img,
+.seen-user .user-img,
+.delivered-user .user-img,
+.members-user .user-img,
+.add-member-user .user-img {
+    padding-left: 1.5rem !important;
+    padding-bottom: 0.5rem !important;
+    padding-top: 0.5rem !important;
+    padding-right: 0rem !important;
+}
+
+.sender .sender-img .img,
+.group .group-img .img,
+.user .user-img .img,
+.seen-user .user-img .img,
+.delivered-user .user-img .img,
+.members-user .user-img .img,
+.add-member-user .user-img .img {
+    padding-top: 10px;
+    text-align: center;
+    height: 100% !important;
+    width: 100% !important;
+    border-radius: 50% !important;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sender .sender-text,
+.group .group-text {
+    padding-right: 0rem !important;
+    padding-left: 0rem !important;
+}
+
+.sender .sender-text .card-body,
+.group .group-text .card-body {
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
+}
+
+.sender-dropdown-menu-link,
+.group-dropdown-menu-link {
+    display: none;
+    color: var(--secondary);
+}
+
+.sender:hover .sender-dropdown-menu-link,
+.group:hover .group-dropdown-menu-link,
+.members-user:hover .group-dropdown-menu-link {
+    display: unset;
+}
+
+.sender-dropdown-menu-link:hover,
+.group-dropdown-menu-link:hover {
+    color: var(--dark);
+}
+
+.members-user .group-dropdown-menu-link:hover {
+    color: var(--white);
+}
+
+.message-recieved,
+.message-sent {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+    margin-bottom: 0.25rem !important;
+    margin-top: 0.25rem !important;
+    border-radius: 7.5px !important;
+    color: white !important;
+}
+
+.message-recieved {
+    float: left !important;
+    background-color: var( --dark);
+}
+
+.message-sent {
+    float: right !important;
+    background-color: var( --cyan);
+}
+
+.message-sent::-moz-selection {
+    /* Code for Firefox */
+    color: var( --cyan);
+    background: white;
+}
+
+.message-sent::selection {
+    color: var( --cyan);
+    background: white;
+}
+
+.message-recieved::-moz-selection {
+    /* Code for Firefox */
+    color: var( --dark);
+    background: white;
+}
+
+.message-recieved::selection {
+    color: var(--dark);
+    background: white;
+}
+
+.message-recieved-block,
+.message-sent-block {
+    animation: animateElement linear .3s;
+    animation-iteration-count: 1;
+}
+
+@keyframes animateElement {
+    0% {
+        opacity: 0;
+        transform: translate(0px, 10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
+
+.message-recieved,
+.message-sent {
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+ ::-webkit-scrollbar {
+    width: 4px;
+    height: 8px;
+}
+
+ ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #d9d9d9;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background-color: #cccccc;
+}
+
+ ::-webkit-scrollbar-corner {
+    background-color: white;
+}
+
+ ::-webkit-scrollbar-track {
+    background-color: white;
+    border-radius: 10px;
+}
+
+.border-info {
+    border-color: #20BEBE !important;
+}
+
+
+/* Group Chat Box*/
+
+#chatBox:not(.group-message) .message-name,
+#chatBox:not(.group-message) .delivered-count,
+#chatBox:not(.group-message) .seen-count {
+    display: none;
+}
+
+#chatBox.group-message .status-sent {
+    display: none;
+}
+
+#chatBox.group-message .message-time-block {
+    right: 0.35rem !important;
+}
+
+#chatBox .message-info {
+    display: none !important;
+}
+
+#chatBox.group-message .message-sent:hover+.message-info,
+#chatBox.group-message .message-info:hover {
+    display: unset !important;
+    cursor: pointer;
+}
+
+#chatBox.group-message .message-name,
+#chatBox.group-message .delivered-count,
+#chatBox.group-message .seen-count {
+    display: unset;
+}
+
+#chatBox.group-message .message-recieved-block,
+#chatBox.group-message .message-sent-block {
+    margin-top: 0.6rem !important;
+    margin-bottom: 0.6rem !important;
+}
