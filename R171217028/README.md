@@ -8,8 +8,9 @@
 * [Technologies](#technologies)
 * [Authors](#authors)
 * [References](#references)
-##Maintainer 
-KESHAV MISHRA
+
+#Maintainer 
+* KESHAV MISHRA
 ## Files and architecture
 
 * Frontend - jQuery
@@ -36,10 +37,7 @@ KESHAV MISHRA
 
 ## Installation
 
-1. Clone or [Download Zip](https://github.com/sauravgarg001/chat-app/archive/master.zip) 
-```
-git clone https://github.com/sauravgarg001/chat-app.git
-```
+1. Clone .```
 2. Goto chat-app directory
 ```
 cd chat-app
