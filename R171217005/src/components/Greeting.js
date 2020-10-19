@@ -11,11 +11,11 @@ const customStyle = {
   color: ""
 };
 
-if (hrs <= 12) {
+if (hrs < 12) {
   greetings = "Good Morning!";
   classname1 = "greeting1";
   customStyle.color = "yellow";
-} else if (hrs <= 18) {
+} else if (hrs < 18) {
   greetings = "Good Afternoon!";
   classname1 = "greeting2";
   customStyle.color = "green";
