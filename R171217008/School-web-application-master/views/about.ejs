@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Anwar College Website">
+    <meta name="author" content="Ganiyu Sodiq">
+    <meta name="keywords" content="School, College enrolment, College, College admission">
+    <title>About Us</title>
+    
+    <!--bootsrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <!--font awesome-->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+  <!--Font link-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto|Ubuntu&display=swap" rel="stylesheet">
+
+  <!--JS and JQuery-->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <!--CSS link-->
+  
+  <link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+  <%- include("partials/navbar") %>
+  <div class="header-picture">
+    <img src="images/picture5.jpg" alt="">
+    <h1 class="heading">ABOUT <span style="color: blue;">US</span></h1>
+  </div>
+
+  <div id="container">
+    
+    <div  class="inner-container">
+      <h3><span style="color: blue;">SCHOOL HISTORY</span></h3>
+      <P>The Anwar College is founded by Solemilia Educational Trust and was inaugurated as a co-educational secondary school on Monday November 7, 1994. Since the establishment of The Vale college , the school has continued to exemplarily distinguish itself by providing holistic education, as evident from the students we graduate each year, true to our watchword â€œCharacter and Learningâ€.</P>
+
+      <h5>ORGANIZATION</h5>
+      <p>The Anwar College has maximum capacity for 50 new students anually in JSS1 and fills existing vacancies in JSS2, SSS1 and SSS2. Every class in the college is divided into 2 arms of not more than 25 students each.</p>
+      <p>Students are presented for the Oyo State and the National Examinations Council (NECO) Junior Secondary School Certificate Examinations which they take in JSS3.</p>
+      <p>Senior students (SSS1-SSS3) are prepared for both the West African Secondary School Certificate Examination (WASSCE) for which they are presented in SSS3. However, our curriculum is designed to include JAMB examination syllabus.
+        Curriculum</p>
+      <p>The College prepares students for the JSSC examination in the following subjects</p>
+      <p>English, Mathematics, Agric Science, Fine Art, Christian Religious Knowledge, Business Studies, Physical and Health Education. Home Economics, Basic Science, Basic Technology, Yoruba / Hausa / Igbo, Social Studies, French and Music.</p>
+      <p>* At the end of JSS3, each student is presented for a maximum of 12 subjects (NBEM) and 13 subjects for the JSSCE (Oyo State)</p>
+      <p>Subjects offered at the Senior Secondary School level are:</p>
+      <p>English Language, Literature in English, Mathematics, Further Mathematics, Yoruba, Commerce, French, Geography, Physics, Chemistry, Biology, Agric Science,Government, Technical Drawing, Economics, Food and Nutrition, Accounts and Christian Religious Studies.</p>
+      <p>* History, Hausa and Igbo can be added depending on demand.
+        All SSS1 Year 1 students take 11-12 subjects. All SSS2 students must pass 9 relevant subjects to proceed to SSS3. SSS2 students are also forbidden to take any external examinations.
+      </p>
+      <h6>ASSESMENT AND REPORTS</h6>
+      <p>Students are assessed continuously, and reports of the continuous assessment are available to parents twice a term: at mid-term for viewing and in written form at the end of the term, with the examination results. A comprehensive report with comments is issued at the end of the term.</p>
+    </div>
+
+    <hr>
+    <hr>
+  
+  </div>
+
+  <section class="newsletter">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <% if(update === 200){ %>
+            <div class="alert alert-success">
+              <a href="#" class="close" data-dismiss="alert">×</a>
+              <p><strong>Thank you. </strong>You will now be receiving our newsletters via emails.</p> 
+            </div>
+          <% }else if(update === ""){ %>
+            <div class="alert alert-warning">
+              <a href="#" class="close" data-dismiss="alert">×</a>
+              <p><strong>Please try again </strong>"The email has already been used oR Invalid.</p> 
+            </div>
+          <% }else{ %>
+            <div class="alert alert-info">
+                <a href="#" class="close" data-dismiss="alert">×</a>
+                <p>Please provide your email below to subscribe to our newsletter.</p> 
+              </div>
+          <% } %>
+          <h2>Subscribe to our Newsletter</h2>
+          <form action="/about" method="POST">
+            <div class="form-group">
+              <input type="email" name="email" class="form-control" placeholder="Enter your email" required="">
+            </div> 
+            <span class="input-group-btn">
+              <button class="btn btn-primary btn-lg btn-block" type="submit">Subscribe</button>
+            </span>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%- include("partials/footer") %>

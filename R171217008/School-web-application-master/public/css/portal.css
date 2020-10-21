@@ -1,0 +1,13 @@
+body{
+    font-family: "Montserrat";
+    margin: 0;
+}
+
+.jumbotron{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+}

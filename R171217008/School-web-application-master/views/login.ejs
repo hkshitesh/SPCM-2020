@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Anwar College Website">
+    <meta name="author" content="Ganiyu Sodiq">
+    <meta name="keywords" content="School, College enrolment, College, College admission">
+    <title>E-PORTAL</title>
+    
+    <!--bootsrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <!--CSS link-->
+  <link rel="stylesheet" href="css/staff.css">
+
+  <!--font awesome-->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+  <!--Font link-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto|Ubuntu&display=swap" rel="stylesheet">
+
+  <!--JS and JQuery-->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+
+<!--CSS link-->
+<link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <%- include("partials/navbar") %>
+
+    
+
+    <section id="login">
+        
+        <% if (messages.success) { %>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <h4 class="alert-heading">Thank you</h4>
+                <p><%= messages.success %></p>
+                <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                    <span aria-hidden="true">&times</span>
+                </button>
+            </div>
+            
+        <% } %>
+
+        <form class="form" action="" method="POST">
+            <img class="mb-4" src="" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-bold">THE ANWAR COLLEGE</h1>
+            <p class="h3 mb-3 font-weight-bold">LOGIN BELOW</p>
+            <div class="form-group">
+                <input type="email" name="username" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+            </div>
+            <div class="form-group">
+               <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+            </div>
+            
+            
+            <button class="btn btn-md btn-primary " type="submit">LOGIN</button>
+            <!-- <p class="mt-5 mb-3 text-muted">© Anwar college</p> -->
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: Docker@2
+  inputs:
+    containerRegistry: 'Your Container Registry'
+    repository: 'Your docker repo'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+    tags: '$(Build.BuildNumber)'
+
+# - task: TerraformInstaller@0
+#   inputs:
+#     terraformVersion: 'latest'
+
+- task: TerraformTaskV1@0
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    backendServiceArm: 'Your Subscription Id'
+    backendAzureRmResourceGroupName: 'resource group name'
+    backendAzureRmStorageAccountName: 'storage account name'
+    backendAzureRmContainerName: 'stoarge container name'
+    backendAzureRmKey: '$(access_key)'
+
+- task: TerraformTaskV1@0
+  inputs:
+    provider: 'azurerm'
+    command: 'plan'
+    commandOptions: '-var "dockerhub-username=$(dockerhub-username)" -var "imageversion=$(Build.BuildNumber)"'
+    environmentServiceNameAzureRM: 'Your Subscription Id'
+
+- task: TerraformTaskV1@0
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    commandOptions: '-var "dockerhub-username=$(dockerhub-username)" -var "imageversion=$(Build.BuildNumber)"'
+    environmentServiceNameAzureRM: 'Your Subscription Id'
+
+
+
+

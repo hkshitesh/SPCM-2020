@@ -1,0 +1,212 @@
+body{
+    font-family: 'Montserrat';
+    text-align: justify;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: "Montserrat-bold";
+    font-weight: 700;
+    padding: 5px 0px;
+} 
+
+a{
+    text-decoration: none !important;
+    margin: 2px 0;
+}
+
+hr{
+    display: block;
+    /* margin: 50px 50px; */
+    margin-top: 50px;
+    border: solid 2px;
+}
+
+.form-field{
+    margin: 5% 0;
+}
+
+.heading-picture{
+    font-family: "Montserrat";
+    position: relative;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.heading{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.heading-picture img{
+    width: 100%;
+    box-shadow: 2px 2px 2px 2px black;
+}
+
+    
+#admission{
+    margin: 50px 50px;
+}
+
+.admission-policy, .admission-form, .admission-portal{
+    line-height: 1.5;
+    padding: 20px 30px 1px 30px;
+    margin: 20px 0x;
+}
+
+.admission-form img{
+    width: 150px;
+    height: 150px;
+    border-radius: 20%;
+    padding-bottom: 10px;
+}
+
+.portal-inner{
+    background-color:  #D8D8D8;
+    border: 1px solid black;
+    box-shadow: 1px 1px 1px black, 1px 1px 1px black;
+    padding: 30px 30px;
+}
+
+form{
+    margin-top: 20px;
+}
+
+.navbar{
+    padding: 0, 0, 1.5rem;
+    /* position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; */
+}
+
+.navbar-brand{
+    font-family: 'Ubuntu';
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.nav-item{
+    padding: 0, 20px;
+}
+
+.nav-link {
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black    ;
+    padding: 20px 0px;
+    margin: 0px 20px;
+    display: inline-block;
+    position: relative;
+    opacity: 0.8;
+}
+  
+.nav-link:hover {
+    opacity: 1;
+}
+  
+.nav-link::before {
+    transition: 300ms;
+    height: 5px;
+    content: "";
+    position: absolute;
+    background-color: #031D44;
+}
+
+.nav-link-ltr::before {
+    width: 0%;
+    bottom: 10px;
+}
+  
+.nav-link-ltr:hover::before {
+    width: 82%;
+}
+
+
+.header-picture{
+    font-family: "Montserrat";
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+    margin-left: 0;
+}
+
+.header-picture img{
+    width: 100%;
+    height: 100%;
+    box-shadow: 2px 2px 2px 2px black;
+}
+
+.heading{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container{
+    margin: 50px 50px;
+    text-align: justify;
+}
+
+
+
+.newsletter{
+    padding-top: 1%;
+}
+
+
+
+.newsletter{
+    padding-top: 1%;
+}
+
+#bottom {
+    font-family: "Ubuntu";
+    text-align: left;
+    background-color: #232427;
+    padding: 20px 0;
+    margin-top: 50px;
+    text-align: left;
+}
+
+
+#bottom h4{
+    color: white;
+}
+
+#bottom a{
+    color: #F55A00;
+}
+
+#bottom a:hover{
+    color: white;
+}
+
+.bottom-footer{
+    padding: 50px 50px;
+}
+
+#footer{
+    background-color: #0066CC;
+    color: black;
+    margin-top: 0;
+    padding: 10px;
+    font-size: 10px;
+    text-align: center;
+}
+
+@media(max-width: 1028px){
+    .container{
+        text-align: justify;
+        width: 100%;
+        margin: 50px 10px;
+        
+    }
+}

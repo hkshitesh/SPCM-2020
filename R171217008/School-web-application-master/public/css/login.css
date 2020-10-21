@@ -1,0 +1,24 @@
+body{
+    font-family: "Montserrat";
+    background: #D8D8D8 url("../images/adult-computer-eyewear-female-1181325\ \(2\).jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #F55A00;
+   
+}
+
+p{
+    padding:0 0 5% 22%;
+}
+h1{
+    padding-left: 8%;
+}
+
+#login{
+    margin: 10% 10%;
+}
+
+.form{
+    padding: 0% 60% 0 5%;
+}

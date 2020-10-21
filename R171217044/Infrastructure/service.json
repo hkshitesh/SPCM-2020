@@ -1,0 +1,16 @@
+
+[
+    {
+      "name": "first",
+      "image": "docker.io/prajjawalbanati/my-node-app:1.0",
+      "cpu": 10,
+      "memory": 512,
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 3000,
+          "hostPort": 3000
+        }
+      ]
+    }
+]
