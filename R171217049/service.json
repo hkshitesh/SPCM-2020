@@ -1,0 +1,17 @@
+[
+    {
+      "name": "first",
+      "image": "docker.io/rachitchauhan/project",
+      "cpu": 10,
+      "memory": 512,
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 5001,
+          "hostPort": 5001
+        }
+      ]
+    }
+]
+
+
