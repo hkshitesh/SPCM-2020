@@ -1,7 +1,7 @@
 provider "aws"{
     region="us-east-1"
-    access_key="AKIAJEKZZ5ZOWNXKHYFQ"
-    secret_key="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"
+    access_key="*************************************"
+    secret_key="***********************************************"
 }
 
 resource "aws_instance" "LoveSharmaDev1Instance" {
